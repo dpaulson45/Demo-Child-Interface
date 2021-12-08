@@ -8,8 +8,10 @@ Truck truck = new Truck();
 IVehicle iTruck = new Truck();
 
 Display.DisplayNewSection("Different Types");
+//even though the types are the same, we can't do the same thing with the object.
 Console.WriteLine("This is the type of car: {0}", car.GetType().ToString());
 Console.WriteLine("This is the type of iCar: {0}", iCar.GetType().ToString());
+//iCar.IsSportsCar; 
 Console.WriteLine("But iCar doesn't have access to IsSportsCar, because it isn't in the interface");
 
 Console.WriteLine("This is the type of truck: {0}", truck.GetType().ToString());
@@ -18,17 +20,19 @@ Console.WriteLine("But iTruck doesn't have access to SupperCab, because it isn't
 
 Display.DisplayNewSection("Running Dipslay");
 Console.WriteLine("On car");
-car.Display();
-
+//You can call the interface type here because car inherits BaseVehicle which uses the IVehicle interface.
+Display.DisplayInterface(car);
 Console.WriteLine("On iCar");
 Display.DisplayInterface(iCar);
 
 Console.WriteLine("On truck");
-truck.Display();
+Display.DisplayInterface(truck);
 Console.WriteLine("On iTruck");
 Display.DisplayInterface(iTruck);
 
 Display.DisplayNewSection("Displaying Parent Info");
+//can't call DisplayParent here for the interface type because we can't convert the interface type to BaseVehicle type.
+Display.DisplayParent(car);
 Display.DisplayParent(truck);
 
 

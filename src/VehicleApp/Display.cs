@@ -10,7 +10,7 @@ namespace VehicleApp
     {
         public static void DisplayInterface(IVehicle vehicle)
         {
-            Console.WriteLine("Inside DisplayInterface");
+            Console.WriteLine("Inside DisplayInterface.");
             vehicle.Display();
         }
 
